@@ -18,6 +18,7 @@ public class Gift {
 
     public void addCandy(Candy candy) {
         candyList.add(candy);
+        logger.log(Level.INFO,"Main.Gift Candy is added to gift");
     }
     public void printCandyList() {
         for (Candy candy :
@@ -45,7 +46,7 @@ public class Gift {
 
     public Candy searchSweetnessBySugarContainment(float minSugarContainment, float maxSugarContainment) {
         for (Candy candy : candyList) {
-            if (candy.getSugarContainment() > minSugarContainment && candy.getSugarContainment() < maxSugarContainment)
+            if (candy.getSugarContainment() >= minSugarContainment && candy.getSugarContainment() <= maxSugarContainment)
                 return candy;
         }
         return null;
